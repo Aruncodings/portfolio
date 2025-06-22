@@ -16,7 +16,7 @@ const Projects = () => {
       ],
       technologies: ["Python", "Tkinter", "Pytesseract", "PIL", "SpeechRecognition", "NLP", "CustomTkinter", "ReportLab"],
       featured: true
-    }
+    },
 
     {
       title: "Smart Healthcare System (WebApp)",
