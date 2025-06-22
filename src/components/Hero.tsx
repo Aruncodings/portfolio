@@ -74,16 +74,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed"
-          >
-            Versatile Software Developer with hands-on experience in backend and full-stack development 
-            using Python (Flask, Django) and SQL. Proficient in Data Structures and Algorithms with 
-            strong problem-solving skills.
-          </motion.p>
+
 
           {/* ✅ Resume + Links */}
           <motion.div
