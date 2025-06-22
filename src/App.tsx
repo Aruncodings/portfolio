@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Summary from './components/Summary';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Education from './components/Education';
@@ -25,7 +24,6 @@ function App() {
         <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <main>
           <Hero />
-          <Summary />
           <Experience />
           <Projects />
           <Education />
