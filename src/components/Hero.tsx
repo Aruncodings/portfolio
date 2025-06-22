@@ -11,7 +11,7 @@ const Hero = () => {
   const socialLinks = [
     { icon: Linkedin, href: 'https://linkedin.com/in/arunkumar-mahendiran', label: 'LinkedIn' },
     { icon: Github, href: 'https://github.com/Aruncodings', label: 'GitHub' },
-    { icon: ExternalLink, href: 'https://bit.ly/arunkumar_portfolio', label: 'Portfolio' },
+    { icon: ExternalLink, href: 'https://portfolio-aruncodings-projects.vercel.app/', label: 'Portfolio' },
   ];
 
   return (
