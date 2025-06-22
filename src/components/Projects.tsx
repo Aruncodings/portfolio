@@ -5,6 +5,20 @@ import { ExternalLink, Github, Calendar, Code } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: "Smart OCR Toolkit (Desktop App)",
+      date: "June 2025",
+      github: "https://github.com/Aruncodings/Smart_OCR_Toolkit",
+      description: "An all-in-one OCR-powered desktop application for document processing and intelligent text extraction.",
+      achievements: [
+        "Built an interactive GUI using Tkinter and CustomTkinter for user-friendly document scanning and analysis.",
+        "Integrated Tesseract-OCR for high-accuracy text recognition from images and PDFs.",
+        "Enabled additional features like speech output (Text-to-Speech), image-to-text conversion, summary generation, and PDF/Word exports.",
+      ],
+      technologies: ["Python", "Tkinter", "Pytesseract", "PIL", "SpeechRecognition", "NLP", "CustomTkinter", "ReportLab"],
+      featured: true
+    }
+
+    {
       title: "Smart Healthcare System (WebApp)",
       date: "Jun 2024",
       github: "https://github.com/Aruncodings/Smart-Healthcare-System",
