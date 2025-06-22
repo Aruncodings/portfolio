@@ -24,7 +24,6 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            {/* Profile Image */}
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -38,7 +37,6 @@ const Hero = () => {
               />
             </motion.div>
 
-            {/* Name */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -48,7 +46,6 @@ const Hero = () => {
               M. Arun Kumar
             </motion.h1>
 
-            {/* Title */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,7 +55,6 @@ const Hero = () => {
               Software Developer
             </motion.div>
 
-            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -78,7 +74,6 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,22 +85,26 @@ const Hero = () => {
             strong problem-solving skills.
           </motion.p>
 
-          {/* Action Buttons */}
+          {/* ✅ Resume + Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <motion.button
-              onClick={() => document.getElementById('pdf-export')?.click()}
+            {/* ✅ Direct Download Link */}
+            <motion.a
+              href="/Arun_Kumar_2025_SDE_.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center gap-2"
             >
               <FileText className="h-5 w-5" />
-              Resume PDF
-            </motion.button>
+              Download Resume
+            </motion.a>
 
             <motion.a
               href="https://linkedin.com/in/arunkumar-mahendiran"
