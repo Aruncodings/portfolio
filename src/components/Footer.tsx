@@ -9,7 +9,7 @@ const Footer = () => {
     { icon: Github, href: 'https://github.com/Aruncodings', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/arunkumar-mahendiran', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:arunkumaraiandds@gmail.com', label: 'Email' },
-    { icon: ExternalLink, href: 'https://bit.ly/arunkumar_portfolio', label: 'Portfolio' },
+    { icon: ExternalLink, href: 'https://portfolio-aruncodings-projects.vercel.app/', label: 'Portfolio' },
   ];
 
   const quickLinks = [
