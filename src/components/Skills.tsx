@@ -1,38 +1,69 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Globe, Palette, Users, MessageCircle } from 'lucide-react';
+import { 
+  Code, Database, Globe, Palette, Users, MessageCircle,
+  Html5, Css3, Javascript, Python, Flask, Django,
+  Git, Github, Figma, Terminal
+} from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       icon: Globe,
       title: "Web Development",
-      skills: ["HTML", "CSS", "JavaScript"]
+      skills: [
+        { name: "HTML", icon: <Html5 className="w-4 h-4 mr-1" /> },
+        { name: "CSS", icon: <Css3 className="w-4 h-4 mr-1" /> },
+        { name: "JavaScript", icon: <Javascript className="w-4 h-4 mr-1" /> }
+      ]
     },
     {
       icon: Code,
       title: "Backend Technologies",
-      skills: ["Python", "Flask", "Django"]
+      skills: [
+        { name: "Python", icon: <Python className="w-4 h-4 mr-1" /> },
+        { name: "Flask", icon: <Flask className="w-4 h-4 mr-1" /> },
+        { name: "Django", icon: <Django className="w-4 h-4 mr-1" /> }
+      ]
     },
     {
       icon: Database,
       title: "Databases",
-      skills: ["MySQL", "SQLite", "MongoDB"]
+      skills: [
+        { name: "MySQL", icon: <Database className="w-4 h-4 mr-1" /> },
+        { name: "SQLite", icon: <Database className="w-4 h-4 mr-1" /> },
+        { name: "MongoDB", icon: <Database className="w-4 h-4 mr-1" /> }
+      ]
     },
     {
-      icon: Code,
+      icon: Terminal,
       title: "Tools",
-      skills: ["VS Code", "Git", "GitHub", "Postman", "ChatGPT"]
+      skills: [
+        { name: "VS Code", icon: <Code className="w-4 h-4 mr-1" /> },
+        { name: "Git", icon: <Git className="w-4 h-4 mr-1" /> },
+        { name: "GitHub", icon: <Github className="w-4 h-4 mr-1" /> },
+        { name: "Postman", icon: <Code className="w-4 h-4 mr-1" /> },
+        { name: "ChatGPT", icon: <MessageCircle className="w-4 h-4 mr-1" /> }
+      ]
     },
     {
       icon: Palette,
       title: "Design",
-      skills: ["Figma", "Adobe Photoshop", "Adobe Illustrator"]
+      skills: [
+        { name: "Figma", icon: <Figma className="w-4 h-4 mr-1" /> },
+        { name: "Adobe Photoshop", icon: <Palette className="w-4 h-4 mr-1" /> },
+        { name: "Adobe Illustrator", icon: <Palette className="w-4 h-4 mr-1" /> }
+      ]
     },
     {
       icon: Users,
       title: "Soft Skills",
-      skills: ["Problem Solving", "Team Collaboration", "Adaptability", "Rapid Learning"]
+      skills: [
+        { name: "Problem Solving", icon: <span className="w-4 h-4 mr-1">🧩</span> },
+        { name: "Team Collaboration", icon: <span className="w-4 h-4 mr-1">👥</span> },
+        { name: "Adaptability", icon: <span className="w-4 h-4 mr-1">🔄</span> },
+        { name: "Rapid Learning", icon: <span className="w-4 h-4 mr-1">⚡</span> }
+      ]
     }
   ];
 
@@ -84,9 +115,10 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ delay: skillIndex * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="px-3 py-1 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-cyan-100 dark:hover:bg-cyan-900 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors duration-200 cursor-default"
+                    className="flex items-center px-3 py-1 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-cyan-100 dark:hover:bg-cyan-900 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors duration-200 cursor-default"
                   >
-                    {skill}
+                    {skill.icon}
+                    {skill.name}
                   </motion.span>
                 ))}
               </div>
@@ -108,9 +140,10 @@ const Skills = () => {
               {languages.map((language, index) => (
                 <span
                   key={index}
-                  className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg font-medium"
+                  className="flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg font-medium"
                 >
-                  {language}
+                  {language === "Tamil" ? "🇱🇰" : "🇬🇧"}
+                  <span className="ml-2">{language}</span>
                 </span>
               ))}
             </div>
