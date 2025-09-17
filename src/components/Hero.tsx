@@ -69,7 +69,7 @@ const Hero = () => {
             className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-6"
           >
             <motion.a
-              href="/Arun_Kumar_2025_SDE_.pdf"
+              href="/Arun_Kumar.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
