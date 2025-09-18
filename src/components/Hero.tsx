@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
           
           {/* Profile Image - No Background, No Rounded Corners */}
-          <div className="relative z-10 shadow-2xl max-w-xs sm:max-w-sm md:max-w-md">
+          <div className="relative z-10  max-w-xs sm:max-w-sm md:max-w-md">
             <img
               src="/head.png"
               alt="Arun Kumar"
