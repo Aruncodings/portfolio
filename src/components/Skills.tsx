@@ -220,7 +220,7 @@ const Skills = () => {
                   key={index}
                   className="flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg font-medium"
                 >
-                  {language === "Tamil" ? "🇱🇰" : "🇬🇧"}
+                  {language === "Tamil" ? "IN" : "🇬🇧"}
                   <span className="ml-2">{language}</span>
                 </span>
               ))}
