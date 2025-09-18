@@ -17,18 +17,63 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left: Profile Image */}
+        {/* Left: Profile Image with Spiral Background */}
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-          className="w-full flex justify-center"
+          className="w-full flex justify-center relative"
         >
-          <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl">
+          {/* Spiral Ring Background */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-96 h-96 relative">
+              {/* Outer spiral ring */}
+              <motion.div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'conic-gradient(from 0deg, #06b6d4, #0ea5e9, #3b82f6, #6366f1, #06b6d4)',
+                  padding: '4px',
+                }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900"></div>
+              </motion.div>
+              
+              {/* Middle spiral ring */}
+              <motion.div
+                className="absolute inset-4 rounded-full opacity-70"
+                style={{
+                  background: 'conic-gradient(from 180deg, #0ea5e9, #06b6d4, #3b82f6, #8b5cf6, #0ea5e9)',
+                  padding: '3px',
+                }}
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900"></div>
+              </motion.div>
+              
+              {/* Inner spiral ring */}
+              <motion.div
+                className="absolute inset-8 rounded-full opacity-50"
+                style={{
+                  background: 'conic-gradient(from 90deg, #3b82f6, #06b6d4, #0ea5e9, #6366f1, #3b82f6)',
+                  padding: '2px',
+                }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900"></div>
+              </motion.div>
+            </div>
+          </div>
+          
+          {/* Profile Image - No Background, No Rounded Corners */}
+          <div className="relative z-10 shadow-2xl max-w-xs sm:max-w-sm md:max-w-md">
             <img
               src="/head.png"
               alt="Arun Kumar"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
         </motion.div>
@@ -59,7 +104,7 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6"
           >
-            Versatile Software Developer with hands-on experience in backend and full-stack development using Python (Flask, Django) and SQL. Proficient in Data Structures and Algorithms with strong problem-solving skills.
+            Currently freelancing as a Software Developer with 5+ completed Python projects. Experienced in backend and full-stack development using Python (Flask, Django) and SQL. Proficient in Data Structures and Algorithms with strong problem-solving skills.
           </motion.p>
 
           <motion.div

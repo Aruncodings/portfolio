@@ -66,14 +66,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
             >
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('pdf-export')?.click()}
-              className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
-            >
-              Download PDF
-            </motion.button>
+          
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,15 +104,6 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                 {item.label}
               </a>
             ))}
-            <button
-              onClick={() => {
-                document.getElementById('pdf-export')?.click();
-                setIsMenuOpen(false);
-              }}
-              className="block mx-4 mt-2 bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-lg font-medium text-center transition-colors duration-200"
-            >
-              Download PDF
-            </button>
           </motion.div>
         )}
       </nav>

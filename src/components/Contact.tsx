@@ -1,29 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   const contactInfo = [
     {
       icon: Mail,
@@ -50,6 +29,12 @@ const Contact = () => {
     { icon: Linkedin, href: 'https://linkedin.com/in/arunkumar-mahendiran', label: 'LinkedIn' },
     { icon: ExternalLink, href: 'https://portfolio-aruncodings-projects.vercel.app/', label: 'Portfolio' },
   ];
+
+  // Replace this URL with your actual Google Form URL
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPnCfCofE071lLN291fMOqI7d90zJSZD4u-ClqZQqKf0YbGA/viewform?usp=header";
+  
+  // Alternative: Direct link to open form in new tab
+  const googleFormDirectUrl = "https://docs.google.com/forms/d/e/1FAIpQLScPnCfCofE071lLN291fMOqI7d90zJSZD4u-ClqZQqKf0YbGA/viewform?usp=header";
 
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
@@ -124,75 +109,71 @@ const Contact = () => {
                 ))}
               </div>
             </div>
+
+            {/* Optional: Button to open form in new tab */}
+            <div className="mt-8">
+              <motion.a
+                href={googleFormDirectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center space-x-2 bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+              >
+                <MessageSquare className="h-5 w-5" />
+                <span>Open Contact Form</span>
+              </motion.a>
+            </div>
           </motion.div>
 
+          {/* Option 1: Embedded Google Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg"
+            className="bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-lg"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                  placeholder="Your Name"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors duration-200 resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                  placeholder="Tell me about your project or just say hello!"
-                />
-              </div>
-              
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center space-x-2"
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">Send Me a Message</h3>
+            <div className="relative h-96 lg:h-[600px]">
+              <iframe
+                src={googleFormUrl}
+                className="w-full h-full border-0 rounded-lg"
+                title="Contact Form"
+                loading="lazy"
               >
-                <Send className="h-5 w-5" />
-                <span>Send Message</span>
-              </motion.button>
-            </form>
+                Loading contact form...
+              </iframe>
+            </div>
           </motion.div>
+
+          {/* Option 2: Styled container for form link (if embedded doesn't work well) */}
+          {/* 
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg flex flex-col items-center justify-center text-center"
+          >
+            <MessageSquare className="h-16 w-16 text-cyan-500 mb-6" />
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Form</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              Fill out our Google Form to get in touch. I'll respond to your message as soon as possible.
+            </p>
+            <motion.a
+              href={googleFormDirectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 inline-flex items-center space-x-2"
+            >
+              <MessageSquare className="h-5 w-5" />
+              <span>Open Contact Form</span>
+            </motion.a>
+          </motion.div>
+          */}
         </div>
       </div>
     </section>

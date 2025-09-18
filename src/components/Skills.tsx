@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Code, Database, Globe, Palette, Users, MessageCircle,
-  Git, Github, Figma, Terminal
+  GitBranch, Github, Figma, Terminal
 } from 'lucide-react';
 
 // SVG Icons for specific technologies
@@ -118,7 +118,7 @@ const Skills = () => {
       title: "Tools",
       skills: [
         { name: "VS Code", icon: <VSCodeIcon /> },
-        { name: "Git", icon: <Git className="w-4 h-4 mr-1" /> },
+        { name: "Git", icon: <GitBranch className="w-4 h-4 mr-1" /> },
         { name: "GitHub", icon: <Github className="w-4 h-4 mr-1" /> },
         { name: "Postman", icon: <PostmanIcon /> },
         { name: "ChatGPT", icon: <ChatGPTIcon /> }
